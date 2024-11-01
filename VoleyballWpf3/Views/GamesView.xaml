@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="VoleyballWpf3.Views.GamesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VoleyballWpf3.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <ListView ItemsSource="{Binding Games}" SelectedItem="{Binding SelectedMatch}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Команда 1" DisplayMemberBinding="{Binding Team_1.Title}" Width="150"/>
+                    <GridViewColumn Header="Команда 2" DisplayMemberBinding="{Binding Team_2.Title}" Width="150"/>
+                    <GridViewColumn Header="Счет команды 1" DisplayMemberBinding="{Binding Score_Team_1}" Width="100"/>
+                    <GridViewColumn Header="Счет команды 2" DisplayMemberBinding="{Binding Score_Team_2}" Width="100"/>
+                    <GridViewColumn Header="Начало" DisplayMemberBinding="{Binding Start_Game_Time}" Width="150"/>
+                    <GridViewColumn Header="Окончание" DisplayMemberBinding="{Binding End_Game_Time}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>
